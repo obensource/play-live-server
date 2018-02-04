@@ -6,7 +6,7 @@ const wss = require('./wss.js')
 
 const parameterSchema = joi.object().keys({
   appPath: joi.string().required(),
-  type: joi.string().alphanum()
+  type: joi.string().alphanum().required()
 })
 
 const errCatch = (err) => {
@@ -14,7 +14,7 @@ const errCatch = (err) => {
   process.exit(1)
 }
 
-const PlayLiveServer = async ({appPath, type, restrict}) => {
+const PlayLiveServer = async ({appPath, type}) => {
   const validation = joi.validate({ appPath: appPath, type: type }, parameterSchema)
 
   if (validation.error) {
@@ -51,11 +51,16 @@ const PlayLiveServer = async ({appPath, type, restrict}) => {
 
   console.log('Server running at:', server.info.uri)
 
-  if (type && type === 'p2p') {
-    console.log('P2P server coming soon')
-    process.exit(0)
-  } else {
-    wss(server)
+  switch (type) {
+    case 'broadcast':
+      wss(server)
+      break
+    case 'p2p':
+      console.log('\nplay-live-server: P2P server coming soon\n')
+      process.exit(0)
+    default:
+      console.log('\nError: play-live-server supported server types: \'broadcast\', \'p2p\'\n')
+      process.exit(1)
   }
 }
 
