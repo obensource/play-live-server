@@ -1,0 +1,50 @@
+{
+  "name": "play-live-server",
+  "version": "1.0.0",
+  "description": "Simple servers which enable distributed musical performance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obensource/play-live-server.git"
+  },
+  "keywords": [
+    "['audio'",
+    "'music'",
+    "'realtime'",
+    "'distributed'",
+    "'performance'",
+    "'ws'",
+    "'websockets'",
+    "'P2P'",
+    "'peer2peer'",
+    "'peer-to-peer'",
+    "'web",
+    "audio'",
+    "'web",
+    "MIDI'",
+    "'server']"
+  ],
+  "author": "Ben Michel <obensource@benmichel.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obensource/play-live-server/issues"
+  },
+  "homepage": "https://github.com/obensource/play-live-server#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "hapi": "^17.2.0",
+    "inert": "^5.1.0",
+    "joi": "^13.1.2",
+    "ws": "^4.0.0"
+  }
+}
