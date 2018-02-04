@@ -7,7 +7,7 @@ __A set of simple servers that enable realtime distributed music & audio perform
 This module aims to provision a handful of servers that actualize useful models of distributed musical & audio performance for application development.
 
 ## Installation
-Run $`npm install play-live-server`
+$`npm install play-live-server`
 
 ## Use
 #### Import
