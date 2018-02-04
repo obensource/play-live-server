@@ -10,11 +10,11 @@ This module aims to provision servers that actualize useful patterns of musical 
 $`npm install play-live-server`
 
 ## Use
-#### Import
+### Import
 Import **Play Live Server** into your app’s startup script (eg. `src/app.js`): <br/>
 `const PlayLiveServer = require(‘play-live-server’)`
 
-#### Call With `appPath` & `type` parameters
+### Call With `appPath` & `type` parameters
 ```
 const path = require('path')
 
