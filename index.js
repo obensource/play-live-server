@@ -6,8 +6,7 @@ const wss = require('./wss.js')
 
 const parameterSchema = joi.object().keys({
   appPath: joi.string().required(),
-  type: joi.string().alphanum(),
-  restrict: joi.boolean()
+  type: joi.string().alphanum()
 })
 
 const errCatch = (err) => {
@@ -16,20 +15,13 @@ const errCatch = (err) => {
 }
 
 const PlayLiveServer = async ({appPath, type, restrict}) => {
-  const validation = joi.validate({ appPath: appPath, type: type, restrict: restrict }, parameterSchema)
+  const validation = joi.validate({ appPath: appPath, type: type }, parameterSchema)
 
   if (validation.error) {
     errCatch(validation.error)
   }
 
-  let restrictToSameHost = (restrict) => {
-    return restrict
-      ? 'localhost'
-      : '0.0.0.0'
-  }
-
   const server = new hapi.Server({
-    host: restrictToSameHost(restrict),
     port: Number(process.env.PORT) || 9090
   })
 
