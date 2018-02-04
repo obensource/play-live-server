@@ -2,7 +2,7 @@
 
 <img src="remote-performer.png" alt="remote-performance-app" width="625px"/>
 
-__A set of simple servers that enable realtime distributed music & audio performance applications.__
+__A set of simple servers that enable realtime distributed music & audio performance application development.__
 
 This module aims to provision a handful of servers that actualize useful models of distributed musical & audio performance for application development.
 
