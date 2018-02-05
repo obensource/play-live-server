@@ -7,7 +7,7 @@ __A set of simple servers that enable realtime distributed music & audio perform
 This module aims to provision servers that actualize useful patterns of musical collaboration for geographically distributed performers.
 
 ## Installation
-$`npm install play-live-server`
+npm package coming soon!
 
 ## Use
 ### Import
