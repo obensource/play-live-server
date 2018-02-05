@@ -1,6 +1,6 @@
 {
   "name": "play-live-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple servers which enable distributed musical performance",
   "main": "index.js",
   "scripts": {
