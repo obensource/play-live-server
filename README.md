@@ -15,7 +15,7 @@ Import **Play Live Server** into your app’s startup script (eg. `src/app.js`):
 `const PlayLiveServer = require(‘play-live-server’)`
 
 ### Call With `appPath` & `type` parameters
-```
+```js
 const path = require('path')
 
 PlayLiveServer({appPath: path.join(__dirname, '/static'), type: 'p2p'})
