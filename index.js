@@ -1,6 +1,6 @@
 'use strict'
 
-const hapi = require('hapi')
+const hapi = require('@hapi/hapi')
 const joi = require('joi')
 const wss = require('./wss.js')
 
@@ -14,8 +14,8 @@ const errCatch = (err) => {
   process.exit(1)
 }
 
-const PlayLiveServer = async ({appPath, type}) => {
-  const validation = joi.validate({ appPath: appPath, type: type }, parameterSchema)
+const PlayLiveServer = async ({ appPath, type }) => {
+  const validation = parameterSchema.validate({ appPath: appPath, type: type })
 
   if (validation.error) {
     errCatch(validation.error)
@@ -26,7 +26,7 @@ const PlayLiveServer = async ({appPath, type}) => {
   })
 
   try {
-    await server.register(require('inert'))
+    await server.register(require('@hapi/inert'))
   } catch (err) {
     errCatch(err)
   }
@@ -59,7 +59,9 @@ const PlayLiveServer = async ({appPath, type}) => {
       console.log('\nplay-live-server: P2P server coming soon\n')
       process.exit(0)
     default:
-      console.log('\nError: play-live-server supported server types: \'broadcast\', \'p2p\'\n')
+      console.log(
+        "\nError: play-live-server supported server types: 'broadcast', 'p2p'\n"
+      )
       process.exit(1)
   }
 }
